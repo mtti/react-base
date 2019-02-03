@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import FrontPage from './front-page';
 
 class App extends React.Component {
@@ -11,4 +12,16 @@ class App extends React.Component {
     );
   }
 }
-export default App;
+
+const mapStateToProps = state => ({
+
+});
+
+const mapDispatchToProps = {
+
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
