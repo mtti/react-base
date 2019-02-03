@@ -3,11 +3,15 @@
   "private": true,
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
+    "client:build": "webpack",
+    "client:watch": "webpack-dev-server",
+    "start": "node src/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "4.16.4"
   },
   "devDependencies": {
     "axios": "0.18.0",
