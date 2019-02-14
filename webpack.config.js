@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+const config = {
   mode: 'production',
   entry: ['./src/client/js/index.js'],
   output: {
@@ -38,13 +38,27 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].[chunkhash].css',
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/client/index.html',
-      filename: './index.html',
-    })
-  ]
+  plugins: [],
+};
+
+module.exports = (env, argv) => {
+  var cssFilename = '[name].[chunkhash].css';
+  const mode = argv.mode || 'production';
+
+  config.mode = mode;
+
+  if (mode == 'development') {
+    config.output.filename = '[name].js';
+    cssFilename = '[name].css';
+  }
+
+  config.plugins.push(new MiniCssExtractPlugin({
+    filename: cssFilename,
+  }));
+  config.plugins.push(new HtmlWebPackPlugin({
+    template: './src/client/index.html',
+    filename: './index.html',
+  }));
+
+  return config;
 };

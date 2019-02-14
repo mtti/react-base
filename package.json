@@ -5,8 +5,9 @@
   "description": "",
   "main": "src/server/index.js",
   "scripts": {
-    "client:build": "webpack",
-    "client:watch": "webpack-dev-server",
+    "client:build": "webpack --mode=development",
+    "client:build:production": "webpack --mode=production",
+    "client:watch": "webpack-dev-server --mode=development",
     "start": "node src/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
