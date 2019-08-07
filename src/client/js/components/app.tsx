@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import FrontPage from './front-page';
@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = () => ({
 
 });
 

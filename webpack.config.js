@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   mode: 'production',
-  entry: ['./src/client/js/index.js'],
+  entry: ['./src/client/js/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
@@ -13,14 +13,24 @@ const config = {
     contentBase: './dist'
   },
   devtool: 'source-map',
+
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+  },
+
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts(x?)$/,
         exclude: /node_modules/,
         use: [
-          { loader: 'babel-loader' },
-        ],
+          { loader: 'ts-loader' }
+        ]
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
       },
       {
         test: /\.scss$/,
@@ -38,6 +48,7 @@ const config = {
       }
     ]
   },
+
   plugins: [],
 };
 
