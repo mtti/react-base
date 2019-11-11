@@ -4,9 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   mode: 'production',
-  entry: ['./src/client/js/index.tsx'],
+  entry: ['./src/client/ts/index.tsx'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist', 'client'),
     filename: '[name].[chunkhash].js',
   },
   devServer: {
