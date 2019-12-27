@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2017",
+        "target": "es2019",
         "module": "commonjs",
         "declaration": true,
         "outDir": "../../dist/server",
@@ -12,6 +12,6 @@
         "**/*.ts"
     ],
     "exclude": [
-        "**/*.spec.ts'"
+        "**/*.test.ts'"
     ]
 }
