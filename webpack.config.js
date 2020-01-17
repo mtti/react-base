@@ -86,7 +86,7 @@ module.exports = (env, argv) => {
   config.plugins.push(new CopyPlugin([
     {
       from: './src/client/static',
-      to: 'static',
+      to: '.',
       ignore: [
         '.DS_Store',
         '.gitkeep'
