@@ -1,4 +1,4 @@
-FROM node:11.8-stretch
+FROM node:12.13.0-stretch
 
 ENV RUN_DIR /app
 WORKDIR $RUN_DIR
@@ -8,4 +8,4 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-CMD     ["npm", "start"]
+CMD ["npm", "start"]

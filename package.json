@@ -1,8 +1,14 @@
 {
   "name": "@mtti/react-base",
-  "private": true,
   "version": "0.0.0",
   "description": "Full-stack TypeScript base project",
+  "repository": "github:mtti/react-base",
+  "author": "Matti Hiltunen",
+  "license": "Apache-2.0",
+  "private": true,
+  "engines": {
+    "node": ">=12.13.0"
+  },
   "main": "dist/server/index.js",
   "scripts": {
     "build": "npm run build:server && npm run build:client",
